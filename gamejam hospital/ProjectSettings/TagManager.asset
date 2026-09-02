@@ -38,8 +38,17 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: Vision
+    uniqueID: 1172353787
+    locked: 0
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Floor
+    uniqueID: 1652696039
+    locked: 0
+  - name: Wall
+    uniqueID: 3334162359
     locked: 0
   m_RenderingLayers:
   - Default

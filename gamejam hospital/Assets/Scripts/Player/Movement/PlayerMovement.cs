@@ -7,6 +7,12 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField]
     private float moveSpeed = 10f;
 
+    [Header("Cooldown for teleporting")]
+    [SerializeField]
+    private float teleportCooldown = .5f;
+    private float teleportCooldownLeft;
+    private bool canTeleport = true;
+
     private Vector2 movementDir = Vector2.zero;
 
     private void Start()
@@ -16,6 +22,16 @@ public class PlayerMovement : MonoBehaviour
 
     private void Update()
     {
+        if (teleportCooldownLeft > 0)
+        {
+            teleportCooldownLeft -= Time.deltaTime;
+            canTeleport = false;
+        }
+        else
+        {
+            canTeleport = true;
+        }
+
         movementDir = new Vector2(0, 0);
         Movement();
         if (movementDir != Vector2.zero)
@@ -44,5 +60,17 @@ public class PlayerMovement : MonoBehaviour
         else if (movementDir == new Vector2(-1, 1)) transform.rotation = Quaternion.Euler(0, 0, 225);
         else if (movementDir == new Vector2(-1, 0)) transform.rotation = Quaternion.Euler(0, 0, 270);
         else if (movementDir == new Vector2(-1, -1)) transform.rotation = Quaternion.Euler(0, 0, 315);
+    }
+
+    public bool CanTeleport()
+    {
+        return canTeleport;
+    }
+
+    public void TeleportPlayer(Transform targetPos)
+    {
+        transform.position = targetPos.position;
+        teleportCooldownLeft = teleportCooldown;
+        canTeleport = false;
     }
 }

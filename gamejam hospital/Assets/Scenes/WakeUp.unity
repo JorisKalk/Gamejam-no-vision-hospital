@@ -429,48 +429,54 @@ MonoBehaviour:
   fadeOutDuration: 0.5
   subtitles:
   - text: Good Afternoon my dear patient
-    startTime: 0
-    duration: 1
-  - text: "First of all thank you for signing up\n for our experimental surgery"
+    startTime: 0.7
+    duration: 1.5
+  - text: "First of all thank you for signing up\n for our experimental eye surgery"
     startTime: 1
-    duration: 1
+    duration: 3
   - text: I have good news and bad news
     startTime: 2
-    duration: 1
+    duration: 2
   - text: Good news is you're alive!
     startTime: 3
-    duration: 1
+    duration: 1.3
   - text: Bad news is uh...
     startTime: 4
-    duration: 1
+    duration: 2
   - text: "Remember how the surgery was supposed to\n remove your need for glasses?"
     startTime: 5
-    duration: 1
+    duration: 4
   - text: Well we sort of did that...
     startTime: 6
-    duration: 1
+    duration: 1.5
   - text: You're now almost completely BLIND!
     startTime: 7
-    duration: 1
+    duration: 1.5
   - text: So we kind of did what we promised
     startTime: 8
-    duration: 1
-  - text: Anyway you must be confused and disoriented
+    duration: 1.5
+  - text: Anyway you must be confused and disoriented but
     startTime: 9
-    duration: 5
+    duration: 6.7
   - text: Oh dear! I'm afraid I have to go
     startTime: 10
-    duration: 1
+    duration: 2.3
   - text: "I registered an extra strong dose of anesthesia \nso in about 5 minutes
       you'll be out like a light "
     startTime: 11
-    duration: 1
+    duration: 6
   - text: Don't worry I'll be back for additional surgery soon!
     startTime: 12
-    duration: 1
-  - text: Good luck and Bye bye!
+    duration: 3
+  - text: So don't go anywhere
     startTime: 13
     duration: 1
+  - text: Bye Bye!
+    startTime: 14
+    duration: 2
+  - text: What..? I have to get out of here!
+    startTime: 20
+    duration: 2
 --- !u!4 &255748508
 Transform:
   m_ObjectHideFlags: 0
@@ -593,7 +599,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
-  m_Resource: {fileID: 0}
+  m_Resource: {fileID: 8300000, guid: ac67e6ecdcdcc074f977bf3def21fc37, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1

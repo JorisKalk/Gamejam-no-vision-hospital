@@ -5,6 +5,9 @@ public class TeleportPoint : MonoBehaviour
 {
     [SerializeField]
     private GameObject teleportTarget;
+    [SerializeField]
+    private AudioSource teleportSound;
+
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -16,6 +19,7 @@ public class TeleportPoint : MonoBehaviour
                 if (player.CanTeleport())
                 {
                     player.TeleportPlayer(teleportTarget.transform);
+                    teleportSound.Play();
                 }
             }
         }

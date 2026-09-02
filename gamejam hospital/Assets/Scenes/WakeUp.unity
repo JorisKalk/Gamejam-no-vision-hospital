@@ -412,7 +412,7 @@ MonoBehaviour:
     duration: 1
   - text: Anyway you must be confused and disoriented
     startTime: 9
-    duration: 1
+    duration: 5
   - text: Oh dear! I'm afraid I have to go
     startTime: 10
     duration: 1

@@ -40,7 +40,7 @@ public class MainMenu1 : MonoBehaviour
     public void StartGame()
     {
         PlayClick();
-        SceneManager.LoadScene("SampleScene"); // replace with your scene name
+        SceneManager.LoadScene("WakeUp"); // replace with your scene name
     }
 
     public void OpenSettings()

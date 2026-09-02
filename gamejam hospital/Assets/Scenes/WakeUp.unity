@@ -386,9 +386,46 @@ MonoBehaviour:
   - text: Good Afternoon my dear patient
     startTime: 0
     duration: 2
-  - text: "First of all thank you for signing up\n for our experimental surgey"
+  - text: "First of all thank you for signing up\n for our experimental surgery"
     startTime: 2
     duration: 6
+  - text: I have good news and bad news
+    startTime: 6
+    duration: 8
+  - text: Good news is you're alive!
+    startTime: 8
+    duration: 10
+  - text: Bad news is uh...
+    startTime: 10
+    duration: 12
+  - text: "Remember how the surgery was supposed to\n remove your need for glasses?"
+    startTime: 10
+    duration: 12
+  - text: Well we sort of did that...
+    startTime: 12
+    duration: 13
+  - text: You're now almost completely BLIND!
+    startTime: 13
+    duration: 14
+  - text: So we kind of did what we promised
+    startTime: 14
+    duration: 15
+  - text: Anyway you must be confused and disoriented
+    startTime: 15
+    duration: 16
+  - text: Oh dear! I'm afraid I have to go
+    startTime: 16
+    duration: 17
+  - text: "I registered an extra strong dose of anesthesia \nso in about 5 minutes
+      you'll be out like a light "
+    startTime: 17
+    duration: 21
+  - text: Don't worry I'll be back for additional surgery soon!
+    startTime: 21
+    duration: 22
+  - text: Good luck and Bye bye!
+    startTime: 22
+    duration: 23
 --- !u!4 &255748508
 Transform:
   m_ObjectHideFlags: 0

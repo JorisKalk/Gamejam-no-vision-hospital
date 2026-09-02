@@ -302,7 +302,7 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 1
+  m_HorizontalAlignment: 2
   m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -378,13 +378,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::VoiceOverSubtitle
   subtitleText: {fileID: 93900251}
-  horizontalMargin: 100
+  horizontalMargin: 5
+  verticalMargin: 100
   fadeInDuration: 0.5
   fadeOutDuration: 0.5
   subtitles:
   - text: Good Afternoon my dear patient
     startTime: 0
     duration: 2
+  - text: "First of all thank you for signing up\n for our experimental surgey"
+    startTime: 2
+    duration: 6
 --- !u!4 &255748508
 Transform:
   m_ObjectHideFlags: 0

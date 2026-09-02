@@ -7,21 +7,22 @@ public class VoiceOverSubtitle : MonoBehaviour
     [System.Serializable]
     public class SubtitleLine
     {
-        [TextArea(2, 4)]
+        [TextArea(6, 4)]
         public string text;
 
-        // Time in seconds before this subtitle appears
         public float startTime;
-
-        // How long the subtitle stays visible
         public float duration;
     }
 
     [Header("UI")]
     public TextMeshProUGUI subtitleText;
 
-    [Header("Layout")]
+    [Header("Text Area")]
+    [Tooltip("Distance from the left and right edges of the screen.")]
     public float horizontalMargin = 100f;
+
+    [Tooltip("Distance from the top and bottom of the screen.")]
+    public float verticalMargin = 100f;
 
     [Header("Fade Settings")]
     public float fadeInDuration = 0.5f;
@@ -34,25 +35,8 @@ public class VoiceOverSubtitle : MonoBehaviour
 
     private void Awake()
     {
-        // Make sure the text is centered on screen
-        RectTransform rect = subtitleText.rectTransform;
+        SetupTextArea();
 
-        rect.anchorMin = new Vector2(0f, 0.5f);
-        rect.anchorMax = new Vector2(1f, 0.5f);
-
-        rect.pivot = new Vector2(0.5f, 0.5f);
-
-        rect.offsetMin = new Vector2(horizontalMargin, rect.offsetMin.y);
-        rect.offsetMax = new Vector2(-horizontalMargin, rect.offsetMax.y);
-
-        // Center the text horizontally and vertically
-        subtitleText.alignment = TextAlignmentOptions.Center;
-
-        // Allow the text to expand/wrap horizontally within the screen
-        subtitleText.enableWordWrapping = true;
-        subtitleText.overflowMode = TextOverflowModes.Overflow;
-
-        // Get or create CanvasGroup for fading
         canvasGroup = subtitleText.GetComponent<CanvasGroup>();
 
         if (canvasGroup == null)
@@ -61,9 +45,44 @@ public class VoiceOverSubtitle : MonoBehaviour
         canvasGroup.alpha = 0f;
         subtitleText.text = "";
 
-        // Start automatically
         StartCoroutine(PlaySubtitleSequence());
     }
+
+    private void SetupTextArea()
+
+    {
+        RectTransform rect = subtitleText.rectTransform;
+
+        // Stretch across the screen while keeping margins
+        rect.anchorMin = new Vector2(0f, 0.5f);
+        rect.anchorMax = new Vector2(1f, 0.5f);
+
+        rect.pivot = new Vector2(0.5f, 0.5f);
+
+        // Set the boundaries of the text area
+        rect.offsetMin = new Vector2(
+            horizontalMargin,
+            -verticalMargin
+        );
+
+        rect.offsetMax = new Vector2(
+            -horizontalMargin,
+            verticalMargin
+        );
+
+        // Center the text horizontally and vertically
+        subtitleText.alignment = TextAlignmentOptions.Center;
+
+        // Enable normal word wrapping
+        subtitleText.textWrappingMode = TextWrappingModes.Normal;
+
+        // Prevent text from rendering outside the text box
+        subtitleText.overflowMode = TextOverflowModes.Truncate;
+
+        // Don't automatically resize the font
+        subtitleText.enableAutoSizing = false;
+    }
+
 
     private IEnumerator PlaySubtitleSequence()
     {
@@ -71,15 +90,13 @@ public class VoiceOverSubtitle : MonoBehaviour
 
         foreach (SubtitleLine line in subtitles)
         {
-            // Wait until the subtitle's start time
             float waitTime = line.startTime - currentTime;
 
-            if (waitTime > 0)
+            if (waitTime > 0f)
                 yield return new WaitForSeconds(waitTime);
 
             currentTime = line.startTime;
 
-            // Set subtitle text
             subtitleText.text = line.text;
 
             // Fade in
@@ -101,7 +118,11 @@ public class VoiceOverSubtitle : MonoBehaviour
         subtitleText.text = "";
     }
 
-    private IEnumerator Fade(float startAlpha, float endAlpha, float duration)
+    private IEnumerator Fade(
+        float startAlpha,
+        float endAlpha,
+        float duration
+    )
     {
         if (duration <= 0f)
         {
@@ -130,6 +151,7 @@ public class VoiceOverSubtitle : MonoBehaviour
         canvasGroup.alpha = endAlpha;
     }
 }
+
 
 
 

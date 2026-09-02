@@ -9,6 +9,7 @@ public class MainMenu1 : MonoBehaviour
     public GameObject mainMenuPanel;
     public GameObject settingsPanel;
     public GameObject creditsPanel;
+    public GameObject controlsPanel; // Controls panel
 
     [Header("Settings UI")]
     public Slider soundSlider;          // single slider controlling all audio
@@ -27,7 +28,7 @@ public class MainMenu1 : MonoBehaviour
         {
             soundVolume = PlayerPrefs.GetFloat("SoundVolume", 1f);
             soundSlider.value = soundVolume;
-            UpdateSoundVolume(); // apply volume at start
+            UpdateSoundVolume();
         }
 
         // Hook slider to real-time update
@@ -40,28 +41,46 @@ public class MainMenu1 : MonoBehaviour
     public void StartGame()
     {
         PlayClick();
-        SceneManager.LoadScene("WakeUp"); // replace with your scene name
+        SceneManager.LoadScene("WakeUp");
     }
 
     public void OpenSettings()
     {
         PlayClick();
+
         mainMenuPanel.SetActive(false);
         settingsPanel.SetActive(true);
+        creditsPanel.SetActive(false);
+        controlsPanel.SetActive(false);
     }
 
     public void OpenCredits()
     {
         PlayClick();
+
         mainMenuPanel.SetActive(false);
+        settingsPanel.SetActive(false);
         creditsPanel.SetActive(true);
+        controlsPanel.SetActive(false);
+    }
+
+    public void OpenControls()
+    {
+        PlayClick();
+
+        mainMenuPanel.SetActive(false);
+        settingsPanel.SetActive(false);
+        creditsPanel.SetActive(false);
+        controlsPanel.SetActive(true);
     }
 
     public void BackToMenu()
     {
         PlayClick();
+
         settingsPanel.SetActive(false);
         creditsPanel.SetActive(false);
+        controlsPanel.SetActive(false);
         mainMenuPanel.SetActive(true);
     }
 
@@ -107,5 +126,6 @@ public class MainMenu1 : MonoBehaviour
         mainMenuPanel.SetActive(true);
         settingsPanel.SetActive(false);
         creditsPanel.SetActive(false);
+        controlsPanel.SetActive(false);
     }
 }

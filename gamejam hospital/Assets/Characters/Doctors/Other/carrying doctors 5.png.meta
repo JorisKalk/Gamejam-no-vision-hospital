@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 837745dad5f6dab458406232de340e42
+guid: 44711c8680fe1204882bb27c47889525
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -5894137234619023131
-    second: doctor stand 4_0
+      213: -4869544239782494555
+    second: carrying doctors 5_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,12 +100,12 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: doctor stand 4_0
+      name: carrying doctors 5_0
       rect:
         serializedVersion: 2
-        x: 10
+        x: 0
         y: 0
-        width: 19
+        width: 95
         height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 5e04121e961d33ea0800000000000000
-      internalID: -5894137234619023131
+      spriteID: 5aef6b95057eb6cb0800000000000000
+      internalID: -4869544239782494555
       vertices: []
       indices: 
       edges: []
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      doctor stand 4_0: -5894137234619023131
+      carrying doctors 5_0: -4869544239782494555
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

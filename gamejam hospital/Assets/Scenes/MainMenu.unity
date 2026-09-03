@@ -1808,8 +1808,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -28.45, y: 134}
-  m_SizeDelta: {x: 275.5, y: 60}
+  m_AnchoredPosition: {x: -19, y: 144.21176}
+  m_SizeDelta: {x: 460.1727, y: 89.5007}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &948623313
 MonoBehaviour:
@@ -3488,8 +3488,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 2.1449957}
-  m_SizeDelta: {x: 0, y: 4.2900085}
+  m_AnchoredPosition: {x: 13.549965, y: 0.15934753}
+  m_SizeDelta: {x: -196.58655, y: -31.451172}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1347105144
 MonoBehaviour:
@@ -3511,7 +3511,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Main Menu
+  m_text: Medical Abandonment
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: f610abd7503c8a04a971ebcaa4382f66, type: 2}
   m_sharedMaterial: {fileID: -4728247472334196882, guid: f610abd7503c8a04a971ebcaa4382f66, type: 2}
@@ -3538,8 +3538,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 29.8
-  m_fontSizeBase: 29.8
+  m_fontSize: 27
+  m_fontSizeBase: 27
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 0
@@ -3577,7 +3577,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_margin: {x: -154.2984, y: 0, z: -132.86815, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0

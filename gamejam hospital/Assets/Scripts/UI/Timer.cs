@@ -1,4 +1,5 @@
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Timer : MonoBehaviour
@@ -28,10 +29,10 @@ public class Timer : MonoBehaviour
         {
             timeLeft -= Time.deltaTime;
         }
-        else
+        else if (!gameEnded)
         {
-            sleepMusic.Play();
             gameMusic.Stop();
+            sleepMusic.Play();
             gameEnded = true;
             player.EndGame();
             //add trigger for player sleep animation here,

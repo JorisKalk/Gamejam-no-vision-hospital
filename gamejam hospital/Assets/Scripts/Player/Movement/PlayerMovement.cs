@@ -117,13 +117,7 @@ public class PlayerMovement : MonoBehaviour
     public void EndGame()
     {
         Destroy(sightCone);
-        //start sleep animation here
+        anim.SetTrigger("FallAsleep");
         gameEnded = true;
-    }
-
-    //trigger this method at the end of sleep animation
-    public void ReturnToMenu()
-    {
-        SceneManager.LoadScene(0);
     }
 }

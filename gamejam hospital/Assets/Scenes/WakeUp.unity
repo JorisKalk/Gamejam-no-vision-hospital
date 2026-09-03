@@ -568,16 +568,16 @@ MonoBehaviour:
   subtitles:
   - text: Good Afternoon my dear patient
     startTime: 0.7
-    duration: 1.5
+    duration: 2
   - text: "First of all thank you for signing up\n for our experimental eye surgery"
-    startTime: 1
+    startTime: 2.7
     duration: 3
   - text: I have good news and bad news
-    startTime: 2
+    startTime: 5.7
     duration: 2
   - text: Good news is you're alive!
-    startTime: 3
-    duration: 1.3
+    startTime: 7.7
+    duration: 2
   - text: Bad news is uh...
     startTime: 4
     duration: 2
@@ -588,17 +588,17 @@ MonoBehaviour:
     startTime: 6
     duration: 1.5
   - text: You're now almost completely BLIND!
-    startTime: 7
-    duration: 1.5
+    startTime: 8
+    duration: 2
   - text: So we kind of did what we promised
     startTime: 8
-    duration: 1.5
+    duration: 2
   - text: Anyway you must be confused and disoriented but
     startTime: 9
     duration: 6.7
   - text: Oh dear! I'm afraid I have to go
     startTime: 10
-    duration: 2.3
+    duration: 4
   - text: "I registered an extra strong dose of anesthesia \nso in about 5 minutes
       you'll be out like a light "
     startTime: 11
@@ -615,6 +615,7 @@ MonoBehaviour:
   - text: What..? I have to get out of here!
     startTime: 20
     duration: 2
+  sceneToLoad: Floors
 --- !u!4 &255748508
 Transform:
   m_ObjectHideFlags: 0

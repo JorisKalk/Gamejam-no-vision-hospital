@@ -1,6 +1,5 @@
 using UnityEngine;
 using UnityEngine.UI;
-using TMPro;
 using System.Collections;
 
 public class SubtitleSkipButton : MonoBehaviour
@@ -15,6 +14,7 @@ public class SubtitleSkipButton : MonoBehaviour
 
     private CanvasGroup canvasGroup;
     private bool isVisible = false;
+    private bool hasSkipped = false;
 
     private void Awake()
     {
@@ -50,12 +50,26 @@ public class SubtitleSkipButton : MonoBehaviour
 
     public void Skip()
     {
+        // Prevent Skip from being triggered multiple times
+        if (hasSkipped)
+            return;
+
+        hasSkipped = true;
+
+        // Stop subtitles and voice-over
         if (subtitleSystem != null)
         {
             subtitleSystem.SkipSubtitles();
         }
 
+        // Hide the skip button
         StartCoroutine(FadeButton(1f, 0f));
+
+        // Load the next scene
+        if (subtitleSystem != null)
+        {
+            subtitleSystem.LoadNextScene();
+        }
     }
 
     private IEnumerator FadeButton(float startAlpha, float endAlpha)
@@ -90,4 +104,3 @@ public class SubtitleSkipButton : MonoBehaviour
         }
     }
 }
-

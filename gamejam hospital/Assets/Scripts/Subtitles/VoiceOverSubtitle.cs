@@ -178,7 +178,7 @@ public class VoiceOverSubtitle : MonoBehaviour
         canvasGroup.alpha = endAlpha;
     }
 
-    private void LoadNextScene()
+    public void LoadNextScene()
     {
         if (string.IsNullOrEmpty(sceneToLoad))
         {

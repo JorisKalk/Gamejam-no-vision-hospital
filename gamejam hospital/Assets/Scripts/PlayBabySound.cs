@@ -10,6 +10,7 @@ public class PlayBabySound : MonoBehaviour
         if (collision.gameObject.CompareTag("Player"))
         {
             babySounds.Play();
+            Destroy(this.gameObject);
         }
     }
 }

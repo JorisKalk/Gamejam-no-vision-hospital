@@ -1,4 +1,5 @@
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Timer : MonoBehaviour
@@ -11,6 +12,8 @@ public class Timer : MonoBehaviour
     private AudioSource sleepMusic;
     [SerializeField]
     private AudioSource gameMusic;
+    [SerializeField]
+    private PlayerMovement player;
 
     private float timeLeft;
     private bool gameEnded = false;
@@ -26,11 +29,12 @@ public class Timer : MonoBehaviour
         {
             timeLeft -= Time.deltaTime;
         }
-        else
+        else if (!gameEnded)
         {
-            sleepMusic.Play();
             gameMusic.Stop();
+            sleepMusic.Play();
             gameEnded = true;
+            player.EndGame();
             //add trigger for player sleep animation here,
             //then add trigger at end of animation to go back to menu.
             //also make sure to lock controls after that.

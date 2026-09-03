@@ -1,5 +1,6 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using TMPro;
 
 public class VoiceOverSubtitle : MonoBehaviour
@@ -37,6 +38,10 @@ public class VoiceOverSubtitle : MonoBehaviour
 
     [Header("Subtitles")]
     public SubtitleLine[] subtitles;
+
+    [Header("Scene Transition")]
+    [Tooltip("Name of the scene to load after the final subtitle.")]
+    public string sceneToLoad;
 
     private CanvasGroup canvasGroup;
     private Coroutine subtitleCoroutine;
@@ -130,11 +135,14 @@ public class VoiceOverSubtitle : MonoBehaviour
             currentTime += line.duration + fadeOutDuration;
         }
 
-        // Finished normally
+        // Make sure subtitle is hidden
         subtitleText.text = "";
         canvasGroup.alpha = 0f;
 
         subtitleCoroutine = null;
+
+        // Load the next scene after the final fade-out
+        LoadNextScene();
     }
 
     private IEnumerator Fade(
@@ -170,6 +178,20 @@ public class VoiceOverSubtitle : MonoBehaviour
         canvasGroup.alpha = endAlpha;
     }
 
+    public void LoadNextScene()
+    {
+        if (string.IsNullOrEmpty(sceneToLoad))
+        {
+            Debug.LogWarning(
+                "VoiceOverSubtitle: No scene name has been assigned."
+            );
+
+            return;
+        }
+
+        SceneManager.LoadScene(sceneToLoad);
+    }
+
     // Called when the Skip button is pressed
     public void SkipSubtitles()
     {
@@ -191,3 +213,4 @@ public class VoiceOverSubtitle : MonoBehaviour
         canvasGroup.alpha = 0f;
     }
 }
+

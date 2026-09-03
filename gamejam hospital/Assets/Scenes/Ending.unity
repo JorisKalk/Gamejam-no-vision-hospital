@@ -1245,6 +1245,8 @@ MonoBehaviour:
   textMeshPro: {fileID: 830843485}
   audioDelay: 5
   textDelay: 8
+  mainMenuScene: MainMenu
+  sceneDelay: 1.5
 --- !u!4 &1818096776
 Transform:
   m_ObjectHideFlags: 0

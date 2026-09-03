@@ -117,6 +117,7 @@ public class PlayerMovement : MonoBehaviour
     public void EndGame()
     {
         Destroy(sightCone);
+        sprite.flipX = false;
         anim.SetTrigger("FallAsleep");
         gameEnded = true;
     }

@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -30,6 +31,7 @@ public class PlayerMovement : MonoBehaviour
     private bool canTeleport = true;
 
     private Vector2 movementDir = Vector2.zero;
+    private bool gameEnded = false;
 
     private void Start()
     {
@@ -38,6 +40,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void Update()
     {
+        if (gameEnded) return;
         if (teleportCooldownLeft > 0)
         {
             teleportCooldownLeft -= Time.deltaTime;
@@ -107,5 +110,17 @@ public class PlayerMovement : MonoBehaviour
 
         if (movementDir.magnitude != 0) anim.SetBool("Walking", true);
         else anim.SetBool("Walking", false);
+    }
+
+    public void EndGame()
+    {
+        //start sleep animation here
+        gameEnded = true;
+    }
+
+    //trigger this method at the end of sleep animation
+    public void ReturnToMenu()
+    {
+        SceneManager.LoadScene(0);
     }
 }

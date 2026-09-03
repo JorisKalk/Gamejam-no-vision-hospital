@@ -17,6 +17,8 @@ public class PlayerMovement : MonoBehaviour
     private SpriteRenderer sprite;
     [SerializeField]
     private Animator anim;
+    [SerializeField]
+    private GameObject sightCone;
 
     [Header("Movement Values")]
     [SerializeField]
@@ -114,6 +116,7 @@ public class PlayerMovement : MonoBehaviour
 
     public void EndGame()
     {
+        Destroy(sightCone);
         //start sleep animation here
         gameEnded = true;
     }
